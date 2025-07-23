@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarik Saldo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%; overflow: hidden;
+      font-family: 'Inter', sans-serif; background: white;
+    }
+    #app-container {
+      width: 375px; height: 812px;
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      display: flex; flex-direction: column; background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .header {
+      padding: 16px; background: #5DB075; display: flex; flex-direction: column; gap: 4px;
+    }
+    .header .top {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .header .top i { color: white; font-size: 1.25rem; }
+    .header .top span { color: white; font-size: 1rem; font-weight: 600; }
+    .header p.subtitle { color: white; font-size: 0.75rem; }
+    .card {
+      background: white; border-radius: 1rem; padding: 16px;
+      margin: 0 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative; top: -24px;
+    }
+    .card h2 { font-size: 1rem; font-weight: 600; margin: 0; }
+    .card p.amount { font-size: 1.125rem; font-weight: 800; margin: 8px 0; }
+    .card p.desc { font-size: 0.875rem; color: #4A4A4A; margin: 0; }
+    .form { flex: 1; padding: 0 16px; margin-top: -8px; overflow-y: auto; }
+    .form-group { margin-bottom: 16px; display: flex; flex-direction: column; }
+    .form-group label { font-size: 0.75rem; font-weight: 500; color: #4A4A4A; margin-bottom: 4px; }
+    .form-group input { padding: 8px 12px; border: 1px solid #D1D5DB; border-radius: 0.5rem; font-size: 0.875rem; }
+    .form-group .with-icon { position: relative; }
+    .form-group .with-icon input { padding-right: 32px; }
+    .form-group .with-icon i { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #10B981; }
+    .btn-confirm { margin: 0 16px 24px; background: #5DB075; color: white; text-align: center;
+      padding: 12px; border-radius: 0.5rem; font-weight: 600; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <div id="app-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="top">
+        <i class="fas fa-arrow-left"></i>
+        <span>Tarik Saldo</span>
+      </div>
+      <p class="subtitle">Masukkan jumlah saldo</p>
+    </div>
+    <!-- Card Dana -->
+    <div class="card">
+      <h2>Dana yang Tersisa</h2>
+      <p class="amount">Rp. 500,000</p>
+      <p class="desc">contoh: sisa felis, laoreet non urna ut elementum tortor...</p>
+    </div>
+    <!-- Form -->
+    <div class="form">
+      <div class="form-group with-icon">
+        <label>Informasi Bank?</label>
+        <input type="text" value="0931-5131-5321-6477" />
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="form-group">
+        <label>Jumlah Transfer</label>
+        <input type="text" value="Rp. 50,000" />
+      </div>
+      <div class="form-group">
+        <label>Nama Penerima</label>
+        <input type="text" value="Bima Fajri Prabowo" />
+      </div>
+    </div>
+    <!-- Confirm Button -->
+    <button class="btn-confirm">Konfirmasi</button>
+    <!-- Footer Nav (Reward1 style) -->
+    <nav class="flex justify-between items-center border-t border-gray-300 py-3 px-6 bg-white">
+      <button class="flex flex-col items-center text-gray-500 text-xs">
+        <i class="fas fa-home text-lg"></i>
+        Home
+      </button>
+      <button class="flex flex-col items-center text-green-500 text-xs">
+        <i class="fas fa-gift text-lg"></i>
+        Reward
+      </button>
+      <button class="flex flex-col items-center text-white text-xs bg-green-500 rounded-full w-16 h-16 -mt-10 shadow-lg justify-center">
+        <i class="fas fa-trash-alt text-2xl"></i>
+        <span class="text-[10px] mt-1">Setor</span>
+      </button>
+      <button class="flex flex-col items-center text-green-500 text-xs">
+        <i class="fas fa-clipboard-list text-lg"></i>
+        History
+      </button>
+      <button class="flex flex-col items-center text-gray-500 text-xs">
+        <i class="fas fa-user-circle text-lg"></i>
+        Profile
+      </button>
+    </nav>
+  </div>
+</body>
+</html>

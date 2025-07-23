@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riwayat Penukaran</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: white;
+    }
+    #app-container {
+      width: 375px;
+      height: 812px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      background: #5DB075;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    /* Header */
+    .header {
+      background: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      padding: 16px;
+    }
+    .header .title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #388E3C;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .header .title i {
+      font-size: 1.25rem;
+    }
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+    }
+    .content h2 {
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .transaction-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .transaction-item {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .transaction-item .info {
+      display: flex;
+      flex-direction: column;
+    }
+    .transaction-item .info p.date {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #4A4A4A;
+    }
+    .transaction-item .info p.time {
+      margin: 2px 0 0;
+      font-size: 0.75rem;
+      color: #9E9E9E;
+    }
+    .transaction-item span.amount {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #388E3C;
+    }
+  </style>
+</head>
+<body>
+  <div id="app-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="title">
+        <i class="fas fa-arrow-left"></i>
+        <span>Riwayat Penukaran</span>
+      </div>
+    </div>
+    <!-- Transactions -->
+    <div class="content">
+      <h2>Riwayat Penukaran</h2>
+      <div class="transaction-list">
+        <div class="transaction-item">
+          <div class="info">
+            <p class="date">Kemarin</p>
+            <p class="time">21:00 WIB</p>
+          </div>
+          <span class="amount">- Rp. 50.000</span>
+        </div>
+        <div class="transaction-item">
+          <div class="info">
+            <p class="date">2 Hari Lalu</p>
+            <p class="time">18:30 WIB</p>
+          </div>
+          <span class="amount">- Rp. 50.000</span>
+        </div>
+        <div class="transaction-item">
+          <div class="info">
+            <p class="date">Kemarin</p>
+            <p class="time">21:00 WIB</p>
+          </div>
+          <span class="amount">- Rp. 50.000</span>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Navigation (Reward1 style) -->
+    <nav class="flex justify-between items-center border-t border-gray-300 py-3 px-6 bg-white">
+      <button class="flex flex-col items-center text-gray-500 text-xs">
+        <i class="fas fa-home text-lg"></i>
+        Home
+      </button>
+      <button class="flex flex-col items-center text-green-500 text-xs">
+        <i class="fas fa-gift text-lg"></i>
+        Reward
+      </button>
+      <button class="flex flex-col items-center text-white text-xs bg-green-500 rounded-full w-16 h-16 -mt-10 shadow-lg justify-center">
+        <i class="fas fa-trash-alt text-2xl"></i>
+        <span class="text-[10px] mt-1">Setor</span>
+      </button>
+      <button class="flex flex-col items-center text-green-500 text-xs">
+        <i class="fas fa-clipboard-list text-lg"></i>
+        History
+      </button>
+      <button class="flex flex-col items-center text-gray-500 text-xs">
+        <i class="fas fa-user-circle text-lg"></i>
+        Profile
+      </button>
+    </nav>
+  </div>
+</body>
+</html>

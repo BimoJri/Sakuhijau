@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>SakuHijau</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    #app {
+      width: 375px;
+      height: 812px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+      background: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 32px;
+      padding-right: 32px;
+      box-sizing: border-box;
+    }
+    body.fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <h1 class="text-green-600 font-semibold text-lg mb-6">SakuHijau</h1>
+
+  <img alt="Green checkmark icon inside a green rounded square" class="w-24 h-24 mb-8" src="assets/mail.svg" width="96" height="96"/>
+
+  <div class="flex space-x-3 mb-6">
+    <div class="w-8 h-8 rounded-md bg-green-100"></div>
+    <div class="w-8 h-8 rounded-md bg-green-100"></div>
+    <div class="w-8 h-8 rounded-md bg-green-100"></div>
+    <div class="w-8 h-8 rounded-md bg-green-100"></div>
+  </div>
+
+  <button class="w-full bg-green-600 text-white py-2 rounded-md mb-3" data-href="register1.html" type="button">
+    Next
+  </button>
+
+  <p class="text-xs text-green-600">
+    Didn't get the code?
+    <button class="font-semibold underline" type="button">Resend it</button>
+  </p>
+
+  <!-- Step Indicators -->
+  <div class="flex justify-center space-x-2 mt-4 mb-10">
+    <button class="w-6 h-2 rounded-full bg-green-200" data-href="register1.html" type="button"></button>
+    <button class="w-6 h-2 rounded-full bg-green-200" data-href="register2.html" type="button"></button>
+    <button class="w-6 h-2 rounded-full bg-green-200" data-href="register3.html" type="button"></button>
+    <button class="w-6 h-2 rounded-full bg-green-600" data-href="register4.html" type="button"></button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (e) {
+      const target = e.target.closest("a, button[data-href]");
+      if (!target) return;
+      e.preventDefault();
+      const href = target.getAttribute("href") || target.getAttribute("data-href");
+      if (!href) return;
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+</script>
+</body>
+</html>
