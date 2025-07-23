@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>SakuHijau Profile Picture</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      overflow: hidden;
+    }
+    #app-container {
+      width: 375px;
+      height: 812px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+<div class="flex flex-col justify-between" id="app-container">
+  <div class="flex flex-col items-center pt-20 px-6">
+    <h1 class="text-green-600 font-bold text-lg mb-6">SakuHijau</h1>
+
+    <div class="w-24 h-24 rounded-full bg-green-400 flex items-center justify-center mb-4">
+      <img alt="White camera icon with wireless signal on green circular background" class="w-8 h-8" src="assets/Frame.svg" width="32" height="32"/>
+    </div>
+
+    <p class="text-gray-600 text-xs mb-6">Your Profile Picture</p>
+
+    <button class="w-full max-w-xs bg-green-200 text-green-800 text-xs font-semibold rounded-md py-2 mb-2" type="button">
+      Choose Existing Picture
+    </button>
+    <button class="w-full max-w-xs bg-green-200 text-green-800 text-xs font-semibold rounded-md py-2 mb-2" type="button">
+      Take a Picture
+    </button>
+    <button class="w-full max-w-xs bg-green-200 text-green-800 text-xs font-semibold rounded-md py-2" data-href="register4.html" type="button">
+      Skip
+    </button>
+
+    <!-- Step Indicator -->
+    <div class="flex justify-center space-x-2 mt-4 mb-10">
+      <button class="w-6 h-2 rounded-full bg-green-200" data-href="register1.html" type="button"></button>
+      <button class="w-6 h-2 rounded-full bg-green-200" data-href="register2.html" type="button"></button>
+      <button class="w-6 h-2 rounded-full bg-green-600" data-href="register3.html" type="button"></button>
+      <button class="w-6 h-2 rounded-full bg-green-200" data-href="register4.html" type="button"></button>
+    </div>
+  </div>
+
+  <div class="w-full overflow-hidden">
+    <img alt="Earth Illustration" class="w-full object-cover" src="assets/Hands_Earth.png"/>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.addEventListener("click", function (e) {
+      const target = e.target.closest("a, button[data-href]");
+      if (!target) return;
+      e.preventDefault();
+      const href = target.getAttribute("href") || target.getAttribute("data-href");
+      if (!href) return;
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+</script>
+</body>
+</html>
